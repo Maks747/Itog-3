@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Введите количество строк");
+        int n = scn.nextInt();
+        int max = 0;
+        int maxstrok = 0;
+        System.out.println("Количество строк: " + n);
+        String[] str = new String[n];
+        System.out.println("Введите строки");
+        str[0] = scn.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            str[i] = scn.nextLine();
+            int a = i + 1;
+            System.out.println("Строка " + a + ": " + str[i]);
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (max < str[i].length()) {
+                max = str[i].length();
+                maxstrok = i;
+            } else if (max == str[i].length()) {
+                continue;
+            }
+        }
+        System.out.println("Строка с максимальным количеством символов:  " +  str[maxstrok]);
+    }
+}
